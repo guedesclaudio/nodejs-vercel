@@ -1,5 +1,7 @@
 import express from "express";
 import cors from "cors";
+import dotenv from "dotenv"
+dotenv.config()
 
 const server = express()
 
@@ -10,4 +12,4 @@ server.get("/", (req, res) => {
     res.send("server it's on")
 })
 
-server.listen(3003, () => console.log("Server listen on PORT 3003"))
+server.listen(process.env.PORT, () => console.log("Server listen on PORT 3003"))
